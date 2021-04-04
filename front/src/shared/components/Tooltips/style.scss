@@ -1,0 +1,93 @@
+$tooltip-arrow-shadow-width: 3px;
+$tooltip-arrow-offset-vertical: 5px;
+$tooltip-arrow-offset-horizontal: 13px;
+$tooltip--border-radius: 3px;
+$tooltips--background: #000;
+$tooltips--title: #fff;
+$tooltips--visibility: hidden;
+$moving--size: calc(100% + 12px);
+
+@mixin tooltip-container-dim {
+  max-width: 260px;
+  width: max-content;
+}
+
+@mixin tooltip-container-dim--action {
+  content:'';
+  color: $tooltips--background;
+  width:0;
+  height:0;
+  position:absolute;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+.tooltips {
+  position:relative;
+  display: inline-block;
+  &__container {
+    background-color: $tooltips--background;
+    position: absolute;
+    visibility: hidden;
+    color: $tooltips--title;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    z-index: 1;
+    &__right {
+      @include tooltip-container-dim;
+      left: $moving--size;
+      &:before {
+        @include tooltip-container-dim--action;
+        border-right:8px solid black;
+        left: -8px;
+        top:6px;
+      }
+    }
+    &__left {
+      @include tooltip-container-dim;
+      right: $moving--size;
+      &:before {
+        @include tooltip-container-dim--action;
+        border-left: 8px solid black;
+        right: -8px;
+        top:6px;
+      }
+    }
+    &__top {
+      align-content: center;
+      left:50%;
+      transform:translate(-50%, 0);
+      @include tooltip-container-dim;
+      bottom: $moving--size;
+      &:before {
+        @include tooltip-container-dim--action;
+        border-right: 8px solid black;
+        left:50%;
+        transform:translate(-50%, 0) rotate(-90deg);
+        top: calc(50% + 8px)
+      }
+    }
+
+    &__bottom {
+      align-content: center;
+      left: 50%;
+      transform: translate(-50%, 0);
+      @include tooltip-container-dim;
+      top: $moving--size;
+      &:before {
+        @include tooltip-container-dim--action;
+        border-right: 8px solid black;
+        left:50%;
+        transform:translate(-50%, 0) rotate(90deg);
+        top: -10px
+      }
+    }
+  }
+
+  &:hover {
+    .tooltips__container {
+      visibility: visible;
+    }
+  }
+}
