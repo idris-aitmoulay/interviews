@@ -76,3 +76,31 @@ export const getContract = async (req: Request, res: Response) => {
   }
   res.status(200).json({ success: true, data });
 };
+
+export const terminateContract = async (req: Request, res: Response) => {
+  console.error("ok ok")
+  const id = parseInt(req.params.id);
+  const role = get(req, 'user.role[0]', '');
+  const { terminationDate } = req.body as { terminationDate: Date };
+  const contractRepository = getCustomRepository(ContractRepository);
+
+  let contractQuery = contractRepository.createQueryBuilder('contract')
+    .where("contract.id=:id AND contract.status IN (:...status)", { id, status:[ContractStatus.PENDING, ContractStatus.ACTIVE] });
+
+  if (role === RoleStatus.BASIC) {
+    const userId = get(req, 'user.user.id', -1);
+    contractQuery = contractQuery.innerJoinAndSelect("contract.users", "user", "user.id=:userId", { userId });
+  }
+
+  const ownContract = await contractQuery.getOne();
+
+  if (!ownContract) {
+    return res.status(404).json({ typeError: 'Error', error: errorMessages['contracts/grant-access']});
+  }
+
+  const { id: contractId } = ownContract;
+
+  const data = await contractRepository.update({ id: contractId }, { terminationDate, status: ContractStatus.CANCELLED })
+
+  res.status(200).json({ success: true, data });
+};

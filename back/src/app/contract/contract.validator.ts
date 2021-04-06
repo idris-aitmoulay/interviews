@@ -8,3 +8,7 @@ export const createContractValidator = [
   check('description').isString(),
 ];
 
+export const echeanceContractValidator = [
+  check('terminationDate').exists().isDate(),
+];
+
