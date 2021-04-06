@@ -12,4 +12,5 @@ export const errorMessages: { [code: string]: string } = {
     'contracts/clients-not-found': 'Les client n\'ont pas été trouvés.',
     'contracts/user-not-client': 'l\'utilisateur choisi n\'est pas un client basic.',
     'contracts/option-already-exist': 'ces clients ont deja inscrit a ces options [clientId / les options acquise]: ',
+    'contracts/grant-access': 'User not allowed',
 };

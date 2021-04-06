@@ -1,5 +1,5 @@
 import {Request, Response} from "express";
-import { isEmpty, uniq } from 'lodash';
+import { isEmpty, uniq, get } from 'lodash';
 import {getCustomRepository, In} from "typeorm";
 import { ContractRepository } from "./contract.repository";
 import { UserRepository } from "../user/user.repository";
@@ -49,11 +49,30 @@ export const createContract = async (req: Request, res: Response) => {
       }
       );
   }
-  
+
   const options = await contractOptionRepository.find({ where: { code: In(givenOptions) }});
   let persistedContract = contractRepository.create({ ...contract });
   persistedContract.users = Promise.all(users);
   persistedContract.contractOptions = Promise.all(options);
   const data = await contractRepository.save(persistedContract);
   return res.status(200).json({ success: true, data });
+};
+
+export const getContract = async (req: Request, res: Response) => {
+  const id = parseInt(req.params.id);
+  const role = get(req, 'user.role[0]', '');
+  const contractRepository = getCustomRepository(ContractRepository);
+  let contractQuery = contractRepository.createQueryBuilder('contract').where("contract.id=:id", { id });
+
+  if (role === RoleStatus.BASIC) {
+    const userId = get(req, 'user.user.id', -1);
+    contractQuery = contractQuery.innerJoinAndSelect("contract.users", "user", "user.id=:userId", { userId });
+  }
+
+  const data = await contractQuery.getOne();
+
+  if (!data) {
+    return res.status(404).json({typeError: 'Error', error: errorMessages['contracts/grant-access']});
+  }
+  res.status(200).json({ success: true, data });
 };
