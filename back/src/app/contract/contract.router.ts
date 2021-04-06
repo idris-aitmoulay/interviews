@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import {createContract, getContract, terminateContract} from "./contract.controller";
-import { createContractValidator } from "./contract.validator";
+import {createContractValidator, echeanceContractValidator} from "./contract.validator";
 import { authorize, permissions } from "../shared";
 
 
@@ -10,4 +10,4 @@ contractRouter.post('/', createContractValidator, authorize(permissions.CONTRACT
 
 contractRouter.get('/:id', authorize(permissions.CONTRACT__R), getContract);
 
-contractRouter.patch('/:id', authorize(permissions.CONTRACT__U_TERMINATING), terminateContract);
+contractRouter.patch('/:id', echeanceContractValidator, authorize(permissions.CONTRACT__U_TERMINATING), terminateContract);
