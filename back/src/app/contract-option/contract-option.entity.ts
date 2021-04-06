@@ -22,7 +22,7 @@ export default class ContractOption {
   @UpdateDateColumn()
   updatedDate: Date;
 
-  @ManyToMany(() => Contract, contract => contract.contractOptions)
+  @ManyToMany(() => Contract, contract => contract.contractOptions, { lazy: true })
   @JoinTable()
   contracts: Promise<Contract[]>
 }

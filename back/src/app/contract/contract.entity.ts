@@ -36,7 +36,7 @@ export default class Contract {
   @Column({ nullable: true })
   terminationDate: Date;
 
-  @ManyToMany(() => ContractOption, option => option.contracts, { nullable: false })
+  @ManyToMany(() => ContractOption, option => option.contracts, { nullable: false, lazy: true })
   contractOptions: Promise<ContractOption[]>;
 
   @ManyToMany(() => User, user => user.contracts, { nullable: false })
