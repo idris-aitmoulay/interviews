@@ -2,13 +2,17 @@ import { Application, NextFunction, Request, Response } from 'express';
 import { authRouter } from '../auth/auth.router';
 import { addUserToRequest, tokenInterceptor } from '../auth/auth.controller';
 import { usersRouter } from '../user/user.router';
+import { contractOptionRouter } from '../contract-option/contract-option.router';
+import { contractRouter } from '../contract/contract.router';
 
 export function initPublicRoutes(app: Application) {
     app.use('/api/auth', authRouter);
+    app.use('/api/contract-options', contractOptionRouter);
 }
 
 export function initSecuredRoutes(app: Application) {
     app.use('/api/users', usersRouter);
+    app.use('/api/contracts', contractRouter);
 }
 
 export function initErrorRoutes(app: Application) {

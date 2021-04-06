@@ -78,7 +78,8 @@ const mapUserToTokenSignature = async (user: User): Promise<UserAuth> => {
     const permissions: any[] = role.permissions;
     return {
         user: userDetails,
-        permissions: permissions.filter(permission => !permission.archived).map(permission => permission.label)
+        role: [role.status],
+        permissions: permissions.filter(permission => !permission.archived).map(permission => permission.code)
     };
 };
 

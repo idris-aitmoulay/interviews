@@ -1,11 +1,12 @@
 import {
   Column,
   CreateDateColumn,
-  Entity, JoinColumn, ManyToOne,
+  Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm';
 import Role from "../role/role.entity";
+import Contract from "../contract/contract.entity";
 
 @Entity()
 export default class User {
@@ -18,7 +19,7 @@ export default class User {
     @Column()
     password: string;
 
-    @Column({type: 'json', nullable: true})
+    @Column({ type: 'json', nullable: true })
     refreshToken: object;
 
     @CreateDateColumn()
@@ -27,10 +28,19 @@ export default class User {
     @UpdateDateColumn()
     updatedDate: Date;
 
-    @Column({default: false})
-    archived: boolean;
-
-    @ManyToOne(() => Role, role => role.user, { eager: true })
+    @ManyToOne(() => Role, role => role.user, { eager: true, nullable: false })
     @JoinColumn()
     role: Role;
+    
+    @ManyToMany(() => Contract, contract => contract.users)
+    @JoinTable()
+    contracts: Promise<Contract[]>;
+
+    toJSON () {
+      // @ts-ignore
+      delete this.password;
+      // @ts-ignore
+      delete this.refreshToken;
+      return this;
+    }
 }

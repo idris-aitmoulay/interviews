@@ -5,5 +5,11 @@ export const errorMessages: { [code: string]: string } = {
     'auth/access-token': 'access_token not exist',
     'common/list-empty': 'votre liste est vide, veuillez l’initialiser',
     'common/model-added': 'inscription refusée vérifiez vos données',
-    'auth/access-token-valid': 'Token still valid'
+    'auth/access-token-valid': 'Token still valid',
+    'users/already-exist': 'Cette adresse e-mail est déjà utilisée par un autre utilisateur',
+    'users/not-found': 'l\'utilisateur n\' pas été trouvé',
+    'users/not-allowed': 'vous n\'avez pas le droit d\'avoir cette information',
+    'contracts/clients-not-found': 'Les client n\'ont pas été trouvés.',
+    'contracts/user-not-client': 'l\'utilisateur choisi n\'est pas un client basic.',
+    'contracts/option-already-exist': 'ces clients ont deja inscrit a ces options [clientId / les options acquise]: ',
 };
