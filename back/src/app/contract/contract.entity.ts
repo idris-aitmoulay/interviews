@@ -1,7 +1,8 @@
 import {
+  AfterLoad,
   Column,
   CreateDateColumn,
-  Entity, JoinTable,
+  Entity,
   ManyToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn
@@ -9,6 +10,7 @@ import {
 import ContractOption from "../contract-option/contract-option.entity";
 import {ContractStatus} from "./constants";
 import User from "../user/user.entity";
+import moment = require("moment");
 
 @Entity()
 export default class Contract {
@@ -41,4 +43,15 @@ export default class Contract {
 
   @ManyToMany(() => User, user => user.contracts, { nullable: false })
   users: Promise<User[]>;
+
+  @AfterLoad()
+  async fetchContract() {
+    if (this.status === ContractStatus.PENDING && this.startDate && moment(this.startDate) <= moment()) {
+      this.status = ContractStatus.ACTIVE;
+    }
+
+    if (this.status === ContractStatus.ACTIVE && this.endDate && moment(this.endDate) <= moment()) {
+      this.status = ContractStatus.FINISHED;
+    }
+  }
 }

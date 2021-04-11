@@ -34,6 +34,7 @@ export interface Environment {
     ADMIN_PASSWORD: string;
     ADMIN_EMAIL: string;
     APP_BASED_URL: string;
+    CRON_TIME: string;
     [key: string]: string | number | undefined;
 }
 

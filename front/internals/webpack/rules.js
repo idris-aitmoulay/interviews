@@ -18,9 +18,6 @@ module.exports = [
       {
         loader: MiniCssExtractPlugin.loader,
         options: {
-          hmr: process.env.NODE_ENV === 'development',
-          // if hmr does not work, this is a forceful method.
-          reloadAll: process.env.NODE_ENV === 'development',
           publicPath: '../',
         },
       },
@@ -30,17 +27,18 @@ module.exports = [
       {
         loader: 'postcss-loader',
         options: {
-          ident: 'postcss',
-          plugins: () => [
-            require('postcss-flexbugs-fixes'),
-            require('postcss-preset-env')({
-              autoprefixer: {
-                flexbox: 'no-2009',
-              },
-              stage: 3,
-            }),
-            postcssNormalize(),
-          ],
+          postcssOptions: {
+            plugins: () => [
+              require('postcss-flexbugs-fixes'),
+              require('postcss-preset-env')({
+                autoprefixer: {
+                  flexbox: 'no-2009',
+                },
+                stage: 3,
+              }),
+              postcssNormalize(),
+            ],
+          }
         },
       },
       {

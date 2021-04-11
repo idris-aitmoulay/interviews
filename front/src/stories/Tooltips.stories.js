@@ -7,9 +7,25 @@ const Story = () => {
     <div>
       Tooltips:
       <br/>
-      fffffffffffffffffffffffffffffffffffffffffffffffff :
-      <Tooltips text={'tooltiped title'}>
-        <div>la vie est belle la vie est belle</div>
+      top tooltips :
+      <Tooltips text={'tooltiped title'} align={'top'}>
+        <div>tooltips top</div>
+      </Tooltips>
+      <br/>
+      bottom tooltips :
+      <Tooltips text={'tooltiped title'} align={'bottom'}>
+        <div>tooltips bottom</div>
+      </Tooltips>
+      <br/>
+      left  tooltips :
+      <Tooltips text={'tooltiped title'} align={'left'}>
+        <div>tooltips left</div>
+      </Tooltips>
+
+      <br/>
+      right  tooltips :
+      <Tooltips text={'tooltiped title'} align={'right'}>
+        <div>tooltips right</div>
       </Tooltips>
     </div>
   );

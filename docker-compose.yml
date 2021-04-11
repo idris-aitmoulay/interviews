@@ -1,0 +1,38 @@
+version: "3"
+services:
+  storybook:
+    build:
+      context: ./front
+      dockerfile: devops/storybook/Dockerfile
+    restart: always
+    ports:
+      - "6006:6006"
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: unkle
+    ports:
+      - "5432:5432"
+    restart: always
+  back:
+    build:
+      context: ./back
+      dockerfile: ./Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      - DB_SERVER=postgres
+      - DB_PORT=5432
+    restart: always
+    ports:
+      - "9000:9000"

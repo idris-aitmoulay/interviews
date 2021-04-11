@@ -19,7 +19,8 @@ const requiredDotEnvKeys = [
     'JWT_REFRESH_TOKEN_EXPIRE',
     'ADMIN_PASSWORD',
     'ADMIN_EMAIL',
-    'APP_BASED_URL'
+    'APP_BASED_URL',
+    'CRON_TIME'
 ];
 
 const optionalDotEnvKeys: string[] = [];
@@ -80,6 +81,7 @@ export function initEnvironment(): AppConfig {
 
     const appConfig: Record<string, any> = {
       basedURL: environment.APP_BASED_URL,
+      cron: environment.CRON_TIME
     } as any;
 
     return {

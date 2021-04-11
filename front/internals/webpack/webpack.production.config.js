@@ -6,7 +6,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const paths = require('./paths');
 
-const webpackMerge = require('webpack-merge');
+const { merge: webpackMerge } = require('webpack-merge');
 const common = require('./webpack.base.config');
 
 module.exports = webpackMerge(
@@ -25,7 +25,6 @@ module.exports = webpackMerge(
       chunkFilename: 'js/[name]-[contenthash:8].js',
     },
     plugins: [
-      new webpack.HashedModuleIdsPlugin(),
       new CleanWebpackPlugin(),
       new Dotenv({
         path: paths.envProdPath,

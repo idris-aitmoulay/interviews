@@ -1,6 +1,7 @@
 import { Application } from 'express';
 import * as bodyParser from 'body-parser';
 import { initErrorRoutes, initPublicRoutes, initSecuredRoutes, secureRoutes } from './route.init';
+import { initJobs } from './app.jobs'
 import * as morgan from 'morgan';
 import cors = require('cors');
 
@@ -17,4 +18,5 @@ export function initApp(app: Application) {
   secureRoutes(app);
   initSecuredRoutes(app);
   initErrorRoutes(app);
+  initJobs();
 }

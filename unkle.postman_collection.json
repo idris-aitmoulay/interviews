@@ -1,0 +1,247 @@
+{
+	"id": "8f22bd91-c66d-90cc-6084-33b46726815c",
+	"name": "unkle",
+	"description": "",
+	"order": [
+		"645da2a3-6f63-a6bc-c2aa-781a558c39d2",
+		"666b2572-2f4f-a70c-9973-39968ac59f0d",
+		"24d72c2c-3ab3-0d50-13c3-02d84b7fc9d0",
+		"04bb8a27-e115-5673-88e5-07d946ee478c",
+		"dc95e02f-ddaf-7802-cd32-55b306369a08",
+		"a6565027-6752-6bf1-cf7c-19ed14e0376d",
+		"44d82649-0344-bccd-ae83-e5e06a96bff9"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1617584184090,
+	"owner": "1972474",
+	"public": false,
+	"requests": [
+		{
+			"id": "04bb8a27-e115-5673-88e5-07d946ee478c",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxNSwiZW1haWwiOiJpbnN1cmFuY2UuaW5zdXJhbmNlQGdtYWlsLmNvbSJ9LCJyb2xlIjpbIkFETUlOIl0sInBlcm1pc3Npb25zIjpbIlVTRVJfX1UiLCJVU0VSX19EIiwiVVNFUl9fUiIsIlVTRVJfX1ciXSwiaWF0IjoxNjE3NjM3MzY3LCJleHAiOjE2MTc2NDA5Njd9.PBzUVKF-NRAYc1Y341TfrjMi5EoPzVbDxtWt3P-lxVc\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxNSwiZW1haWwiOiJpbnN1cmFuY2UuaW5zdXJhbmNlQGdtYWlsLmNvbSJ9LCJyb2xlIjpbIkFETUlOIl0sInBlcm1pc3Npb25zIjpbIlVTRVJfX1UiLCJVU0VSX19EIiwiVVNFUl9fUiIsIlVTRVJfX1ciXSwiaWF0IjoxNjE3NjM3MzY3LCJleHAiOjE2MTc2NDA5Njd9.PBzUVKF-NRAYc1Y341TfrjMi5EoPzVbDxtWt3P-lxVc",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:9000/api/users/query",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1617642494566,
+			"name": "localhost:9000/api/users",
+			"description": "",
+			"collectionId": "8f22bd91-c66d-90cc-6084-33b46726815c",
+			"responses": [],
+			"rawModeData": "{\n\t\"skip\": 0,\n\t\"take\": 10\n}"
+		},
+		{
+			"id": "24d72c2c-3ab3-0d50-13c3-02d84b7fc9d0",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJlbWFpbCI6ImFkbWluLmFkbWluQGdtYWlsLmNvbSJ9LCJyb2xlIjpbIlNVUEVSX0FETUlOIl0sInBlcm1pc3Npb25zIjpbIlVTRVJfX1UiLCJVU0VSX19EIiwiVVNFUl9fUiIsIlVTRVJfX1ciXSwiaWF0IjoxNjE3NjM1NjA3LCJleHAiOjE2MTc2MzkyMDd9.7BVRw2NBIjqb57ehc2u3bx9mVAsqqGPTbKED75HUOtQ\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJlbWFpbCI6ImFkbWluLmFkbWluQGdtYWlsLmNvbSJ9LCJyb2xlIjpbIlNVUEVSX0FETUlOIl0sInBlcm1pc3Npb25zIjpbIlVTRVJfX1UiLCJVU0VSX19EIiwiVVNFUl9fUiIsIlVTRVJfX1ciXSwiaWF0IjoxNjE3NjM1NjA3LCJleHAiOjE2MTc2MzkyMDd9.7BVRw2NBIjqb57ehc2u3bx9mVAsqqGPTbKED75HUOtQ",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:9000/api/users",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1617642495826,
+			"name": "localhost:9000/api/users",
+			"description": "",
+			"collectionId": "8f22bd91-c66d-90cc-6084-33b46726815c",
+			"responses": [],
+			"rawModeData": "{\r\n    \"email\": \"insurance.insurance@gmail.com\",\r\n    \"password\": \"insurance\",\r\n    \"status\": \"ADMIN\"\r\n}"
+		},
+		{
+			"id": "44d82649-0344-bccd-ae83-e5e06a96bff9",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxNCwiZW1haWwiOiJjbGllbnQuY2xpZW50QGdtYWlsLmNvbSJ9LCJyb2xlIjpbIkJBU0lDIl0sInBlcm1pc3Npb25zIjpbIkNPTlRSQUNUX19VX1RFUk1JTkFUSU5HIiwiQ09OVFJBQ1RfX1IiLCJVU0VSX19SIl0sImlhdCI6MTYxODA5MTk3MywiZXhwIjoxNjE4MDk1NTczfQ.NjGOavKNi92LC6xDZ0xJTTF4yVFvh9wRBZeRa6EcHfI\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxNCwiZW1haWwiOiJjbGllbnQuY2xpZW50QGdtYWlsLmNvbSJ9LCJyb2xlIjpbIkJBU0lDIl0sInBlcm1pc3Npb25zIjpbIkNPTlRSQUNUX19VX1RFUk1JTkFUSU5HIiwiQ09OVFJBQ1RfX1IiLCJVU0VSX19SIl0sImlhdCI6MTYxODA5MTk3MywiZXhwIjoxNjE4MDk1NTczfQ.NjGOavKNi92LC6xDZ0xJTTF4yVFvh9wRBZeRa6EcHfI",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:9000/api/contracts/17",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1618149477446,
+			"name": "localhost:9000/api/contracts/17 copy",
+			"description": "",
+			"collectionId": "8f22bd91-c66d-90cc-6084-33b46726815c",
+			"responses": [],
+			"rawModeData": "{\n\t\"terminationDate\": \"2021-04-05\"\n}"
+		},
+		{
+			"id": "645da2a3-6f63-a6bc-c2aa-781a558c39d2",
+			"headers": "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxNSwiZW1haWwiOiJpbnN1cmFuY2UuaW5zdXJhbmNlQGdtYWlsLmNvbSJ9LCJyb2xlIjpbIkFETUlOIl0sInBlcm1pc3Npb25zIjpbIlVTRVJfX1UiLCJVU0VSX19EIiwiVVNFUl9fUiIsIlVTRVJfX1ciXSwiaWF0IjoxNjE3NjY3Nzg0LCJleHAiOjE2MTc2NzEzODR9.buMyFytzHGCBypUamMhz1z7nPbiN9Xw15KO6Bs3f6m4\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxNSwiZW1haWwiOiJpbnN1cmFuY2UuaW5zdXJhbmNlQGdtYWlsLmNvbSJ9LCJyb2xlIjpbIkFETUlOIl0sInBlcm1pc3Npb25zIjpbIlVTRVJfX1UiLCJVU0VSX19EIiwiVVNFUl9fUiIsIlVTRVJfX1ciXSwiaWF0IjoxNjE3NjY3Nzg0LCJleHAiOjE2MTc2NzEzODR9.buMyFytzHGCBypUamMhz1z7nPbiN9Xw15KO6Bs3f6m4",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:9000/api/auth/token",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1617673433173,
+			"name": "localhost:9000/api/auth/token",
+			"description": "",
+			"collectionId": "8f22bd91-c66d-90cc-6084-33b46726815c",
+			"responses": [],
+			"rawModeData": "{\n\t\"forceRefresh\": true,\n\t\"refreshToken\": \"15.106b0f172a45ffd3e678fac67397242d03a7731a8576ec4feafa2d64fdcfedb79eccd9f0376d80b3\"\n}"
+		},
+		{
+			"id": "666b2572-2f4f-a70c-9973-39968ac59f0d",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:9000/api/auth",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1617735138136,
+			"name": "localhost:9000/api/auth",
+			"description": "",
+			"collectionId": "8f22bd91-c66d-90cc-6084-33b46726815c",
+			"responses": [],
+			"rawModeData": "{\r\n    \"email\": \"client.client@gmail.com\",\r\n    \"password\": \"client\"\r\n}"
+		},
+		{
+			"id": "a6565027-6752-6bf1-cf7c-19ed14e0376d",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxNCwiZW1haWwiOiJjbGllbnQuY2xpZW50QGdtYWlsLmNvbSJ9LCJyb2xlIjpbIkJBU0lDIl0sInBlcm1pc3Npb25zIjpbIkNPTlRSQUNUX19VX1RFUk1JTkFUSU5HIiwiQ09OVFJBQ1RfX1IiLCJVU0VSX19SIl0sImlhdCI6MTYxNzcyOTY0OSwiZXhwIjoxNjE3NzMzMjQ5fQ.6FniEy_O27Jtv_wjjtiUlYnzVxOW34Zq0YOlYtg-V4M\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxNCwiZW1haWwiOiJjbGllbnQuY2xpZW50QGdtYWlsLmNvbSJ9LCJyb2xlIjpbIkJBU0lDIl0sInBlcm1pc3Npb25zIjpbIkNPTlRSQUNUX19VX1RFUk1JTkFUSU5HIiwiQ09OVFJBQ1RfX1IiLCJVU0VSX19SIl0sImlhdCI6MTYxNzcyOTY0OSwiZXhwIjoxNjE3NzMzMjQ5fQ.6FniEy_O27Jtv_wjjtiUlYnzVxOW34Zq0YOlYtg-V4M",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:9000/api/contracts/17",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1617735130366,
+			"name": "localhost:9000/api/contracts/17",
+			"description": "",
+			"collectionId": "8f22bd91-c66d-90cc-6084-33b46726815c",
+			"responses": [],
+			"rawModeData": "{\n\t\"startDate\": \"2021-04-05\",\n\t\"options\": [\"TOUT_RISQUE\"],\n\t\"clientIds\": [13,14]\n}"
+		},
+		{
+			"id": "dc95e02f-ddaf-7802-cd32-55b306369a08",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:9000/api/contract-options",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1617642623325,
+			"name": "localhost:9000/api/contract-options",
+			"description": "",
+			"collectionId": "8f22bd91-c66d-90cc-6084-33b46726815c",
+			"responses": []
+		}
+	]
+}
