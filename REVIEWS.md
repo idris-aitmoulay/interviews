@@ -23,6 +23,15 @@ const data = [
   { value: "3", label: "Three" },
 ];
 
+// essayer d'ecrire le code en ES6.
+/*
+const data = [
+  { value: "1", label: "One" },
+  { value: "2", label: "Two" },
+  { value: "3", label: "Three" },
+];
+const values = data.reduce((ac, { value }) => [...ac, value], []);
+*/
 const values = data.reduce((values, { value }) => {
   values.push(value);
   return values;
