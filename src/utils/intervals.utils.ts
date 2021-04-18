@@ -1,4 +1,4 @@
-import { forEach } from 'lodash';
+import { uniqWith, forEach } from 'lodash';
 import { Interval } from "./entities";
 
 export class IntervalUtils {
@@ -17,6 +17,6 @@ export class IntervalUtils {
       }
     });
 
-    return intervals;
+    return uniqWith(intervals, (a: Interval, b: Interval) => (a.start - b.start === 0) && (a.end-b.end ===0));
   }
 }
