@@ -46,18 +46,17 @@ export class MeetingSchedulePlannerAlgorithm {
 
     const [firstElement, ...restIntervals] = workingIntervals;
 
-    if ((bStart + duration) < firstElement.start) {
+    if ((bStart + duration) <= firstElement.start) {
       return {
         day: get(firstElement, "day"),
         start: bStart,
-        end: (bStart + duration)
+        end: (bStart + duration - 1)
       }
     }
-
     let index = 0;
     forEach(restIntervals, (interval : Interval) => {
       const end = get(workingIntervals, `${index}.end`, 0);
-      const timeBetween =  interval.start - end;
+      const timeBetween =  interval.start - end +1;
       if (duration <= timeBetween)
       {
         founded = {
