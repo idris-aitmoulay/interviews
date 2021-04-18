@@ -218,4 +218,17 @@ function getUserSettings(user) {
    }
    return {};
 }
+
+// correct function: utilise la methode (zone1, zone2) (on la nomme aussi la logique d'escape)  
+const getUserSettings = user => {
+  if (!user) return {};
+   
+  const project = getProject(user.id);
+  if (!project) return {};
+ 
+  const settings = getSettings(project.id);
+  if (!settings) return {};
+
+  return settings;
+};
 ```
