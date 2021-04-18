@@ -3,3 +3,8 @@ export interface ReservedTimeInDay {
   startHour: string;
   endHour: string;
 }
+
+export interface Interval {
+  start: number;
+  end: number;
+}
