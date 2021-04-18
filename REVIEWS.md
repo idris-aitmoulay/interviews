@@ -191,6 +191,16 @@ async function getFilledIndexes() {
       throw new Error ('Unable to get indexes');
    }
 }
+
+// correction function:
+async function getFilledIndexes() {
+   try {
+      const [indexes, status, usersId] = await Promise.all(getIndexes(), getStatus(), getUsersId());
+      return indexes.filter(item => item.status === status.filled && usersId.includes(item.userId));
+   } catch(_) {
+      throw new Error ('Unable to get indexes');
+   }
+}
 ```
 
 8.
