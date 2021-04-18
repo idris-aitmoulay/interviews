@@ -11,6 +11,23 @@ describe('IntervalUtils',  () => {
     expect(interval).toStrictEqual(test);
   });
 
+  it('one inner interval', function () {
+    const test = [
+      { start: 10, end: 100 },
+    ]
 
+    const interval = IntervalUtils.union(test)
+    expect(interval).toStrictEqual(test);
+  });
+
+  it('intersection between interval not empty', function () {
+    const test = [
+      { start: 10, end: 100 },
+      { start: 80, end: 200 },
+    ]
+
+    const interval = IntervalUtils.union(test)
+    expect(interval).toStrictEqual([{ start: 10, end: 200 }]);
+  });
 
 });
