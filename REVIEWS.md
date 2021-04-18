@@ -96,6 +96,7 @@ function getQueryProvider() {
 5.
 
 ```js
+// const getParagraphTexts = () => [...document.querySelectorAll("p")]
 function getParagraphTexts() {
    const texts = [];
    document.querySelectorAll("p").forEach(p => {
