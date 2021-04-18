@@ -1,0 +1,35 @@
+{
+  "name": "interviews",
+  "version": "1.0.0",
+  "description": "javascript",
+  "main": "ts-node src/main.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eye-Of-Dragon/interviews.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eye-Of-Dragon/interviews/issues"
+  },
+  "homepage": "https://github.com/Eye-Of-Dragon/interviews#readme",
+  "dependencies": {
+    "@types/lodash": "4.14.168",
+    "@types/mathjs": "6.0.11",
+    "@types/node": "14.14.41",
+    "jest": "26.6.3",
+    "lodash": "4.17.21",
+    "mathjs": "9.3.2",
+    "nodemon": "2.0.7",
+    "ts-jest": "26.5.5",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.4"
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.22"
+  }
+}
