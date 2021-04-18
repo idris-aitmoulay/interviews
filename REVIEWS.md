@@ -41,10 +41,17 @@ const values = data.reduce((values, { value }) => {
 2.
 
 ```js
+// ES6 the same, making await into the return of async function not really necessary.
+/*
+const getIndexes = async () => fetch('https://api.coingecko.com/api/v3/indexes').then(res => res.json())
+*/
 async function getIndexes() {
    return await fetch('https://api.coingecko.com/api/v3/indexes').then(res => res.json());
 }
 
+/*
+const  analyzeIndexes = async () => getIndexes().catch(_ => { throw new Error('Unable to fetch indexes'); });
+*/
 async function analyzeIndexes() {
    const indexes = await getIndexes().catch(_ => {
       throw new Error('Unable to fetch indexes');
