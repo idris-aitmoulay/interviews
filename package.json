@@ -5,7 +5,7 @@
   "main": "ts-node src/main.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest --watchAll"
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
