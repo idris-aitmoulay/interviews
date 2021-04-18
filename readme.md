@@ -81,5 +81,5 @@ envoyez nous le lien de ce repo, avec l'accès si nécessaire.
 # Test Answer:
 
 to run test execute `npm run test`
-to run all use
+to run all use  `npm run start`
 
