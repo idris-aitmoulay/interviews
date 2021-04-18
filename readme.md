@@ -83,3 +83,6 @@ envoyez nous le lien de ce repo, avec l'accès si nécessaire.
 to run test execute `npm run test`
 to run all use  `npm run start`
 
+
+---> Pour le test des reviews c'est dans REVIEWS.md
+
