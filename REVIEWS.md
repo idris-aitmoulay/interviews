@@ -23,6 +23,15 @@ const data = [
   { value: "3", label: "Three" },
 ];
 
+// essayer d'ecrire le code en ES6.
+/*
+const data = [
+  { value: "1", label: "One" },
+  { value: "2", label: "Two" },
+  { value: "3", label: "Three" },
+];
+const values = data.reduce((ac, { value }) => [...ac, value], []);
+*/
 const values = data.reduce((values, { value }) => {
   values.push(value);
   return values;
@@ -32,10 +41,17 @@ const values = data.reduce((values, { value }) => {
 2.
 
 ```js
+// ES6 the same, making await into the return of async function not really necessary.
+/*
+const getIndexes = async () => fetch('https://api.coingecko.com/api/v3/indexes').then(res => res.json())
+*/
 async function getIndexes() {
    return await fetch('https://api.coingecko.com/api/v3/indexes').then(res => res.json());
 }
 
+/*
+const  analyzeIndexes = async () => getIndexes().catch(_ => { throw new Error('Unable to fetch indexes'); });
+*/
 async function analyzeIndexes() {
    const indexes = await getIndexes().catch(_ => {
       throw new Error('Unable to fetch indexes');
@@ -80,6 +96,7 @@ function getQueryProvider() {
 5.
 
 ```js
+// const getParagraphTexts = () => [...document.querySelectorAll("p")]
 function getParagraphTexts() {
    const texts = [];
    document.querySelectorAll("p").forEach(p => {
@@ -92,6 +109,27 @@ function getParagraphTexts() {
 6.
 
 ```js
+/*
+const { firstName, lastName, position, project, salary, yearHired, wololo } = employee
+return (
+      <Table>
+         <Row>
+            <Cell>firstName</Cell>
+            <Cell>lastName</Cell>
+            <Cell>position</Cell>
+            <Cell>project</Cell>
+            <Cell>salary</Cell>
+            <Cell>yearHired</Cell>
+            <Cell>wololo</Cell>
+         </Row>
+      </Table>
+   );
+   
+   
+   
+And Add Runtime Validation using PropsType to check that id will data in it.
+*/
+
 function Employee({ id }) {
    const [error, setError] = useState(null);
    const [loading, setLoading] = useState(true);
@@ -153,6 +191,16 @@ async function getFilledIndexes() {
       throw new Error ('Unable to get indexes');
    }
 }
+
+// correction function:
+async function getFilledIndexes() {
+   try {
+      const [indexes, status, usersId] = await Promise.all(getIndexes(), getStatus(), getUsersId());
+      return indexes.filter(item => item.status === status.filled && usersId.includes(item.userId));
+   } catch(_) {
+      throw new Error ('Unable to get indexes');
+   }
+}
 ```
 
 8.
@@ -170,4 +218,17 @@ function getUserSettings(user) {
    }
    return {};
 }
+
+// correct function: utilise la methode (zone1, zone2) (on la nomme aussi la logique d'escape)  
+const getUserSettings = user => {
+  if (!user) return {};
+   
+  const project = getProject(user.id);
+  if (!project) return {};
+ 
+  const settings = getSettings(project.id);
+  if (!settings) return {};
+
+  return settings;
+};
 ```
