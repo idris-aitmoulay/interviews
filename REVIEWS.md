@@ -114,13 +114,13 @@ const { firstName, lastName, position, project, salary, yearHired, wololo } = em
 return (
       <Table>
          <Row>
-            <Cell>firstName</Cell>
-            <Cell>lastName</Cell>
-            <Cell>position</Cell>
-            <Cell>project</Cell>
-            <Cell>salary</Cell>
-            <Cell>yearHired</Cell>
-            <Cell>wololo</Cell>
+            <Cell>{firstName}</Cell>
+            <Cell>{lastName}</Cell>
+            <Cell>{position}</Cell>
+            <Cell>{project}</Cell>
+            <Cell>{salary}</Cell>
+            <Cell>{yearHired}</Cell>
+            <Cell>{wololo}</Cell>
          </Row>
       </Table>
    );
