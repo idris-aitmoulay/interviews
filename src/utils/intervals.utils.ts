@@ -2,8 +2,9 @@ import { uniqWith, forEach } from 'lodash';
 import { Interval } from "./entities";
 
 export class IntervalUtils {
-  public static union(intervals: Interval[]): Interval[] {
+  public static union(comingIntervals: Interval[]): Interval[] {
     let index = 0;
+    const intervals = [...comingIntervals].sort((a: Interval, b: Interval) => a.start - b.start);
     forEach(intervals, (interval: Interval, i: number) => {
       if (intervals[index].end >=  interval.start)
       {

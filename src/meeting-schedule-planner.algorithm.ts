@@ -20,8 +20,8 @@ export class MeetingSchedulePlannerAlgorithm {
     let suggestion: ReservedTimeInDay | typeof undefined = undefined;
 
     forEach(entriesIntervals, (item: IntervalInDay[], key: string) => {
-      entriesIntervals[key] = IntervalUtils.union(item) as IntervalInDay[];
-      const proposition: IntervalInDay | undefined = MeetingSchedulePlannerAlgorithm.findMeetingInsideIntervals(entriesIntervals[key], [minBoundary, maxBoundary], intDuration);
+      const intervals = IntervalUtils.union(item) as IntervalInDay[];
+      const proposition: IntervalInDay | undefined = MeetingSchedulePlannerAlgorithm.findMeetingInsideIntervals(intervals, [minBoundary, maxBoundary], intDuration);
       if (proposition) {
         suggestion = {
           day: proposition.day + "",
@@ -54,7 +54,7 @@ export class MeetingSchedulePlannerAlgorithm {
       }
     }
     let index = 0;
-    forEach(restIntervals, (interval : Interval) => {
+    forEach(restIntervals, (interval : Interval, i: number) => {
       const end = get(workingIntervals, `${index}.end`, 0);
       const timeBetween =  interval.start - end +1;
       if (duration <= timeBetween)
